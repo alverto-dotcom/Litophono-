@@ -106,16 +106,6 @@
     });
   </script>
 
-  <script>
-    // Espera que A-Frame cargue todo
-    AFRAME.registerComponent('redirect-on-click2', {
-      init: function () {
-        this.el.addEventListener('click', () => {
-          window.location.href = 'pagina3.html'; // Cambia esto por la URL que quieras
-        });
-      }
-    });
-  </script>
 
   <!-- Escena A-Frame -->
   <a-scene cursor="rayOrigin: mouse" raycaster="objects: .clickable">
@@ -128,65 +118,15 @@
       scale="3.2 3.2 3.2"
       rotation="0 0 0"
       shadow
+      animation__rotation="property: rotation;
+                          to: 0 360 0;
+                          loop: true;
+                          dur: 24000;
+                          easing: linear;
+                          paused: false"
 
       redirect-on-click
     ></a-entity>
-
-    <a-entity class="clickable"
-      id="model2"
-      gltf-model="url(assets/01.glb)"
-      position="4 0 0"
-      position="0 0 0"
-      scale="3.2 3.2 3.2"
-      rotation="0 0 0"
-      shadow
-      animation__rotation="property: rotation;
-                          to: 0 360 0;
-                          loop: true;
-                          dur: 24000;
-                          easing: linear;
-                          paused: false"
-      redirect-on-click2
-    ></a-entity>
-
-
-
-
-
-    <a-entity 
-      id="model3"
-      gltf-model="url(assets/01.glb)"
-      position="3 0.467 7.488"
-      position="0 0 0"
-      scale="3.2 3.2 3.2"
-      rotation="0 0 0"
-      shadow
-      animation__rotation="property: rotation;
-                          to: 0 360 0;
-                          loop: true;
-                          dur: 24000;
-                          easing: linear;
-                          paused: false"
-      redirect-on-click
-    ></a-entity>
-
-    <a-entity
-      id="model4"
-      gltf-model="url(assets/SNF.glb)"
-      position="4 -8 0"
-      position="0 0 0"
-      scale="3.2 3.2 3.2"
-      rotation="0 0 0"
-      shadow
-      animation__rotation="property: rotation;
-                          to: 0 360 0;
-                          loop: true;
-                          dur: 24000;
-                          easing: linear;
-                          paused: false"
-      redirect-on-click2
-    ></a-entity>
-
 
      <a-entity
         sound="src: url(tu_audio.mp3); autoplay: true; loop: true; volume: 0.5">
